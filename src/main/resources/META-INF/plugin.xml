@@ -1,0 +1,89 @@
+<idea-plugin>
+    <id>com.ddlab.rnd.ddlabs-snykomycin</id>
+    <resource-bundle>messages.MyMessageBundle</resource-bundle>
+    <name>DDLABS-Snykomycin</name>
+    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <description>
+        <![CDATA[
+        <span style="font-size:13px; font-weight:bold;">Snykomycin</span> is a free and open‑source IntelliJ IDEA plugin designed to help developers in swiftly
+        remediating security vulnerabilities identified by the Snyk system.
+        It intelligently upgrades dependency versions as prescribed by Snyk, ensuring projects remain resilient and secure.
+        Currently, <b>Snykomycin</b> provides seamless support for <b><i>Maven (pom.xml)</b></i>,
+        <b><i>Gradle (build.gradle)</b></i>, and <b><i>NPM (package.json)</b></i> ecosystems.
+        <b>Snykomycin</b> supports the following environments:
+        <ul>
+        <li><b>Windows: 386, AMD64, and ARM64</b></li>
+        <li><b>MacOS: AMD64 and ARM64</b></li>
+        <li><b>Linux Alpine: 386 and AMD64</b></li>
+        <li><b>Linux: 386, AMD64, and ARM64</b></li>
+        </ul>
+
+       <h3>🔑Key Features:</h3>
+       <ul>
+        <li> <b>Vulnerability Insights:</b> Aggregates all dependency vulnerabilities reported by Snyk and presents them with clarity and precision.</li>
+        <li><b>Severity‑Based Visualization:</b> Demonstrates vulnerabilities categorized by severity— <b>Critical</b>, <b>High</b>, <b>Medium</b>, and <b>Low</b>
+        in a sortable tabular format.
+       <li><b>One‑Click Remediation:</b> Effortlessly upgrades fixable dependencies with a single click.</li>
+       <li><b>Contextual Integration:</b> Offers a dedicated context menu, Snykomycin,
+       with intuitive sub‑menus: <b>“Show Snyk Issues”</b> and <b>“Update Dependencies.”</b></li>
+      </ul>
+
+      <h3>🌟 Why Snykomycin:</h3>Security vulnerabilities are reported periodically by the Snyk system, requiring developers to manually retrieve information
+      and update dependencies. It is a dilatory process and impedes the momentum of development.
+      Snykomycin eliminates this friction by enabling rapid dependency upgrades within a minute and accelerates development velocity.
+
+      <h3>❤️ Why You’ll Love It</h3>
+      <b>Synkomycin</b> is a small light-weight plugin which acts as a small antidote to security vulnerabilities without any side effect.
+      It is an attempt to turn chaos into clarity during development.
+
+      <h3>👉 Snykomycin: A creation from Tornado</h3>
+        From the visionary mind at Tornado comes <b>Snykomycin</b> — creafted by an Engineer to solve real problems and simplify developers’ lives.
+        🧐 Wanna to 🤝 join with me to a new challenging technical task ?
+
+      <h3>⚠️ Limitations</h3>
+        At present, <b>Snykomycin</b> does not provide automated upgrade, originating from transitive dependencies.
+        Active development efforts are underway to extend support and deliver comprehensive resolution for all transitive dependency issues in future releases.
+
+        <h3>📄 License</h3>
+          <p> © Copyright 2025 Debadatta Mishra(DD)</p>
+          <p>Free and Open Source licensed under the Apache License, Version 2.0.</p>
+          ✍️ Contributor: Debadatta Mishra(DD)
+          <br>
+    ]]>
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+
+        <notificationGroup id="Snykomycin Notification Group"
+                           displayType="BALLOON"/> <!-- key="snykmycinnotification.group.name" -->
+
+        <!-- SynkoMycin Tool Window for Synk Issues -->
+        <toolWindow id="Snyk Issues" anchor="right" icon="/icons/snyk-1-16.png"
+                    factoryClass="com.ddlab.rnd.tool.view.SnykIssuesToolWindowFactory"/>
+
+        <!-- SynkoMycin Setting Page for the Plugin -->
+        <applicationService serviceImplementation="com.ddlab.rnd.setting.SynkoMycinSettings"/>
+        <applicationConfigurable
+                id="com.example.settings"
+                displayName="Snykomycin Setting"
+                instance="com.ddlab.rnd.setting.SnykoMycinPluginConfigurable"/>
+
+    </extensions>
+    <actions>
+        <group id="SynkoMycinPlugin.SubMenu" text="Snykomycin" class="com.ddlab.rnd.action.GroupMenuControlAction"
+               popup="true" icon="/icons/double-arrow-16.png">
+            <action id="SnykoMycin.DisplaySnykAction"
+                    class="com.ddlab.rnd.action.DisplaySnykDataAction"
+                    text="Show Snyk Issues"
+                    icon="/icons/snyk-1-16.png"/>
+            <action id="SnykoMycin.UpdateBuildAction"
+                    class="com.ddlab.rnd.action.UpdateBuildAction"
+                    text="Update Dependencies"
+                    icon="/icons/update-1-16.png"/>
+            <!--<add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>-->
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </group>
+    </actions>
+</idea-plugin>
