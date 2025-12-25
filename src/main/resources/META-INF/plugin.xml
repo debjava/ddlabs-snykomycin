@@ -1,13 +1,13 @@
 <idea-plugin>
     <id>com.ddlab.rnd.ddlabs-snykomycin</id>
+    <idea-version since-build="211" until-build="261.*"/>
     <resource-bundle>messages.MyMessageBundle</resource-bundle>
     <name>DDLABS-Snykomycin</name>
-    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor url="https://www.ddlabsinc.com">DDLABS INC</vendor>
 
     <description>
         <![CDATA[
-        <span style="font-size:13px; font-weight:bold;">Snykomycin</span> is a free and open‑source IntelliJ IDEA plugin designed to help developers in swiftly
-        remediating security vulnerabilities identified by the Snyk system.
+        Snykomycin is a free and open-source IntelliJ IDEA plugin designed to help developers swiftly remediate security vulnerabilities identified by the Snyk system.
         It intelligently upgrades dependency versions as prescribed by Snyk, ensuring projects remain resilient and secure.
         Currently, <b>Snykomycin</b> provides seamless support for <b><i>Maven (pom.xml)</b></i>,
         <b><i>Gradle (build.gradle)</b></i>, and <b><i>NPM (package.json)</b></i> ecosystems.

@@ -87,4 +87,29 @@ public class Constants {
                         2. No reported dependency version found.\n \
                         3. There may be transitive dependencies, you need to update manually. \
                         """;
+
+    public static final String CLIENT_ID_ERR_MSG = """
+                                                    Client Id cannot be empty, 
+                                                    Go to Snykomycin Setting and check.
+                                                   """;
+    public static final String CLIENT_SECRET_ERR_MSG = """
+                                                        Client Secret cannot be empty,  
+                                                        Go to Snykomycin Setting and check.
+                                                        """;
+    public static final String OAUTH_END_PT_ERR_MSG = """
+                                                        OAuth End Point cannot be empty"
+                                                        Go to Snykomycin Setting and check.
+                                                        """;
+    public static final String LLM_API_END_PT_ERR_MSG = """
+                                                        LLM Api End Point cannot be empty
+                                                        Go to Snykomycin Setting and check.
+                                                        """;
+    public static final String SNYK_API_END_PT_ERR_MSG = """
+                                                        Snyk API URI cannot be empty
+                                                        Go to Snykomycin Setting and check.
+                                                        """;
+    public static final String SNYK_TKN_ERR_MSG = """
+                                                   Snyk Token cannot be empty
+                                                   Go to Snykomycin Setting and check.
+                                                   """;
 }

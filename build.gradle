@@ -14,7 +14,6 @@ repositories {
     }
 }
 
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
 dependencies {
     implementation 'tools.jackson.core:jackson-core:3.0.2'
     implementation 'tools.jackson.core:jackson-databind:3.0.2'
@@ -32,16 +31,6 @@ dependencies {
     }
 }
 
-//dependencies {
-//    intellijPlatform {
-//        intellijIdea("2025.2.4")
-//        testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
-//
-//
-//        // Add plugin dependencies for compilation here, example:
-//        // bundledPlugin("com.intellij.java")
-//    }
-//}
 
 intellijPlatform {
     pluginConfiguration {
@@ -63,30 +52,3 @@ tasks.withType(JavaCompile) {
     targetCompatibility = '21'
 }
 
-
-
-//intellijPlatform {
-//    pluginConfiguration {
-//        ideaVersion {
-//            sinceBuild = "252.25557"
-//        }
-//
-//        changeNotes = """
-//            Initial version
-//        """.trimIndent()
-//    }
-//}
-
-//tasks {
-//    // Set the JVM compatibility versions
-//    withType<JavaCompile> {
-//        sourceCompatibility = "21"
-//        targetCompatibility = "21"
-//    }
-//}
-
-//kotlin {
-//    compilerOptions {
-//        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
-//    }
-//}

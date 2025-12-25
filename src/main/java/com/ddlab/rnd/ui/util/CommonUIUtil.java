@@ -1,5 +1,18 @@
 package com.ddlab.rnd.ui.util;
 
+import com.ddlab.rnd.common.util.Constants;
+import com.ddlab.rnd.setting.SynkoMycinSettings;
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationGroupManager;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.Notifications;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,35 +21,16 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.ddlab.rnd.common.util.Constants;
-import com.ddlab.rnd.setting.SynkoMycinSettings;
-import com.intellij.notification.Notification;
-import com.intellij.notification.NotificationGroupManager;
-import com.intellij.notification.NotificationType;
-import com.intellij.notification.Notifications;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.fileEditor.FileDocumentManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiFile;
-
 public class CommonUIUtil {
 
     public static void showAppSuccessfulMessage(String message) {
-        ApplicationManager.getApplication().invokeLater(() -> {
-            Messages.showInfoMessage(message, Constants.PROD_TITLE);
-        });
+        ApplicationManager.getApplication().invokeLater(() ->
+                Messages.showInfoMessage(message, Constants.PROD_TITLE));
     }
 
     public static void showAppErrorMessage(String message) {
-        ApplicationManager.getApplication().invokeLater(() -> {
-            Messages.showErrorDialog(message, Constants.PROD_TITLE);
-        });
+        ApplicationManager.getApplication().invokeLater(() ->
+            Messages.showErrorDialog(message, Constants.PROD_TITLE));
     }
 
     public static void showErrorNotifiation(String msg) {
@@ -74,30 +68,30 @@ public class CommonUIUtil {
         String snykToken = setting.getSnykTokenTxt();
 
         if (clientId == null || clientId.isEmpty()) {
-            Messages.showErrorDialog("Client Id cannot be empty", Constants.PROD_TITLE);
-            throw new IllegalArgumentException("ClientId cannot be empty!");
+            Messages.showErrorDialog(Constants.CLIENT_ID_ERR_MSG, Constants.PROD_TITLE);
+            throw new IllegalArgumentException(Constants.CLIENT_ID_ERR_MSG);
         }
         if (clientSecret == null || clientSecret.isEmpty()) {
-            Messages.showErrorDialog("Client Secret cannot be empty", Constants.PROD_TITLE);
-            throw new IllegalArgumentException("ClientSecret cannot be empty!");
+            Messages.showErrorDialog(Constants.CLIENT_SECRET_ERR_MSG, Constants.PROD_TITLE);
+            throw new IllegalArgumentException(Constants.CLIENT_SECRET_ERR_MSG);
         }
         if (oAuthTokenUrl == null || oAuthTokenUrl.isEmpty()) {
-            Messages.showErrorDialog("OAuth End Point cannot be empty", Constants.PROD_TITLE);
-            throw new IllegalArgumentException("OAuth End Point cannot be empty!");
+            Messages.showErrorDialog(Constants.OAUTH_END_PT_ERR_MSG, Constants.PROD_TITLE);
+            throw new IllegalArgumentException(Constants.OAUTH_END_PT_ERR_MSG);
         }
         if (aiApiEndPointUri == null || aiApiEndPointUri.isEmpty()) {
-            Messages.showErrorDialog("LLM Api End Point cannot be empty", Constants.PROD_TITLE);
-            throw new IllegalArgumentException("LLM Api End Point cannot be empty!");
+            Messages.showErrorDialog(Constants.LLM_API_END_PT_ERR_MSG, Constants.PROD_TITLE);
+            throw new IllegalArgumentException(Constants.LLM_API_END_PT_ERR_MSG);
         }
 
         if(snykApiEndPointUri == null || snykApiEndPointUri.isEmpty()) {
-            Messages.showErrorDialog("Snyk API URI cannot be empty", Constants.PROD_TITLE);
-            throw new IllegalArgumentException("Snyk API URI cannot be empty!");
+            Messages.showErrorDialog(Constants.SNYK_API_END_PT_ERR_MSG, Constants.PROD_TITLE);
+            throw new IllegalArgumentException(Constants.SNYK_API_END_PT_ERR_MSG);
         }
 
         if (snykToken == null || snykToken.isEmpty()) {
-            Messages.showErrorDialog("Snyk Token cannot be empty", Constants.PROD_TITLE);
-            throw new IllegalArgumentException("Snyk Token cannot be empty!");
+            Messages.showErrorDialog(Constants.SNYK_TKN_ERR_MSG, Constants.PROD_TITLE);
+            throw new IllegalArgumentException(Constants.SNYK_TKN_ERR_MSG);
         }
 
     }

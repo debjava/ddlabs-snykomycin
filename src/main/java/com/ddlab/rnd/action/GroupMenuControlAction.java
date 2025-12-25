@@ -22,6 +22,6 @@ public class GroupMenuControlAction extends DefaultActionGroup  {
 
     @Override
     public @NotNull ActionUpdateThread getActionUpdateThread() {
-        return ActionUpdateThread.EDT; // UI-safe
+        return ActionUpdateThread.BGT; // UI-safe
     }
 }
