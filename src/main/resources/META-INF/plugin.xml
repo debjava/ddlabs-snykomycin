@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.ddlab.rnd.ddlabs-snykomycin</id>
-    <idea-version since-build="211" until-build="261.*"/>
+    <idea-version since-build="231" until-build="261.*"/>
     <resource-bundle>messages.MyMessageBundle</resource-bundle>
     <name>DDLABS-Snykomycin</name>
     <vendor url="https://www.ddlabsinc.com">DDLABS INC</vendor>
