@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.ddlab.rnd"
-version = "1.0.5"
+version = "1.0.7"
 
 repositories {
     mavenCentral()
@@ -35,7 +35,7 @@ dependencies {
 intellijPlatform {
     pluginConfiguration {
         ideaVersion {
-            sinceBuild = '211'
+            sinceBuild = '231'
         }
 
         changeNotes = '''
