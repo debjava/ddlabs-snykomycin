@@ -13,10 +13,9 @@ import java.util.concurrent.CompletableFuture;
 
 public class OnStartActivity implements ProjectActivity {
 
-
     @Override
     public @Nullable Object execute(@NotNull Project project, @NotNull Continuation<? super Unit> continuation) {
-        CommonUIUtil.notifyInfo(project, "Loaded Successfully ...");
+        CommonUIUtil.notifyInfo(project, "Please check and fix Snyk vulnerabilities ...");
         return CompletableFuture.completedFuture(null);
     }
 }
