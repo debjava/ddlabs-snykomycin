@@ -30,7 +30,14 @@ public class CommonUIUtil {
 
     public static void showAppErrorMessage(String message) {
         ApplicationManager.getApplication().invokeLater(() ->
-            Messages.showErrorDialog(message, Constants.PROD_TITLE));
+                Messages.showErrorDialog(message, Constants.PROD_TITLE));
+    }
+
+    public static void notifyInfo(Project project, String message) {
+        NotificationGroupManager.getInstance()
+                .getNotificationGroup("Snykomycin Notification Group")
+                .createNotification("Snykmycin", message, NotificationType.INFORMATION)
+                .notify(project);
     }
 
     public static void showErrorNotifiation(String msg) {
@@ -39,6 +46,12 @@ public class CommonUIUtil {
                 .getNotificationGroup("Snykomycin Notification Group")
                 .createNotification(msg, NotificationType.ERROR)
                 .notify(projects[0]);
+    }
+
+    public static void showWarningNotifiation(Project project, String msg) {
+        Notification notification =
+                new Notification("Snykomycin Notification Group", Constants.PROD_TITLE, msg, NotificationType.INFORMATION);
+        Notifications.Bus.notify(notification, project);
     }
 
     public static void showWarningNotifiation(String msg) {
@@ -53,7 +66,7 @@ public class CommonUIUtil {
 
         for (Project project : ProjectManager.getInstance().getOpenProjects()) {
             Notification notification =
-                    new Notification("Snykomycin Notification Group",  Constants.PROD_TITLE, msg, NotificationType.INFORMATION);
+                    new Notification("Snykomycin Notification Group", Constants.PROD_TITLE, msg, NotificationType.INFORMATION);
             Notifications.Bus.notify(notification, project);
         }
     }
@@ -84,7 +97,7 @@ public class CommonUIUtil {
             throw new IllegalArgumentException(Constants.LLM_API_END_PT_ERR_MSG);
         }
 
-        if(snykApiEndPointUri == null || snykApiEndPointUri.isEmpty()) {
+        if (snykApiEndPointUri == null || snykApiEndPointUri.isEmpty()) {
             Messages.showErrorDialog(Constants.SNYK_API_END_PT_ERR_MSG, Constants.PROD_TITLE);
             throw new IllegalArgumentException(Constants.SNYK_API_END_PT_ERR_MSG);
         }

@@ -55,6 +55,8 @@
 
     <depends>com.intellij.modules.platform</depends>
     <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity
+                        implementation="com.ddlab.rnd.action.OnStartActivity"/>
 
         <notificationGroup id="Snykomycin Notification Group"
                            displayType="BALLOON"/> <!-- key="snykmycinnotification.group.name" -->

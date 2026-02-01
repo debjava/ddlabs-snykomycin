@@ -144,7 +144,8 @@ public class UpdateBuildAction extends AnAction {
                     log.error("Error Messages to get Snyk Issues: {}", ex);
                     CommonUIUtil.showAppErrorMessage(ex.getMessage());
                 } finally {
-                    CommonUIUtil.showWarningNotifiation(Constants.DISCLAIMER_MSG);
+//                    CommonUIUtil.showWarningNotifiation(Constants.DISCLAIMER_MSG);
+                    CommonUIUtil.showWarningNotifiation(project, Constants.DISCLAIMER_MSG);
                 }
             }
 
