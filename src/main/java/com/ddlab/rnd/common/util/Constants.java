@@ -37,15 +37,6 @@ public class Constants {
     public static final String SNYK_TGT_ID_PARAM = "?version=2025-11-05&display_name=";
     public static final String SNYK_PGT_ID_PARAM = "?version=2025-11-05&target_id=";
 
-//    public static final String UPDATE_BUILD_SUCCESS_MSG = """
-//                            Build file updated successfully.  \
-//                        \nPlease build the application before you commit. \
-//                            \nIf there is any issue while building the application, \
-//                            \nplease revert it. You can find the file in Backup folder.\
-//                            \nIf it goes well, delete the Backup folder before you commit\
-//                            \n\n Disclaimer: Answer from AI may not be accurate. \
-//                            """;
-
     public static final String UPDATE_BUILD_SUCCESS_MSG = """
                             Build file updated successfully.  \
                            \nBuild the application before you commit. \
@@ -61,8 +52,6 @@ public class Constants {
     public static final List<String> APPLICABLE_FILE_TYPES = List.of("pom.xml", "build.gradle", "package.json");
     public static final String DATE_FMT = "dd-MM-yyyy-HH-mm-ss";
     public static final String BACKUP_DIR = "Backup";
-//    public static final String SNYK_FIX_INPUT_PROMPT = "snyk.fix.input.prompt";
-//    public static final String SAST = "sast";
     public static final String MODEL_PATH = "/models";
     public static final String NO_SNYK_ISSUES_FOUND = "No Issues Found in Snyk, All Good.";
     public static final String NO_SNYK_PROJECT_FOUND_MSG = "Could not find project in Snyk System.";

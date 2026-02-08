@@ -87,8 +87,6 @@ public class SnykApi {
     private static String getProjectIdByProjectName(String projectName, String buildTypeName, String snykTargetUri, String orgId, String snykToken) {
         // Fetch Target Id
         String targetIdJsonTxt = SnykApi.getTargetIdAsJsonText(projectName, snykTargetUri, snykToken);
-//        log.debug("Initial Target Id Json Txt: " + targetIdJsonTxt);
-//        log.debug("Target Id (Objects.isNull(targetIdJsonTxt)): " + Objects.isNull(targetIdJsonTxt));
         String targetId = getTargetId(targetIdJsonTxt, projectName);
         log.debug("Initial Target Id: " + targetId);
         // Fetch Project Id

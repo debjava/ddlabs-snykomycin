@@ -16,9 +16,6 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -445,33 +442,13 @@ public class AiDetailsPanel extends JPanel {
         String clientSecret = clientSecretTxt.getText();
         String oauthEndPointUri = oauthEndPointTxt.getText();
         String aiApiEndPointUri = llmApiEndPointTxt.getText();
-        java.util.List<String> llmComboItems = new ArrayList<>();
         try {
-//            llmComboItems = BasicUiUtil.getActualLLMModels(clientId, clientSecret, oauthEndPointUri, aiApiEndPointUri);
             llmModelMap = BasicUiUtil.getlLLMModelDetails(clientId, clientSecret, oauthEndPointUri, aiApiEndPointUri);
             llmModelMap.forEach((key, value) ->llmModelcomboBox.addItem(key));
-
-//            for(String llmComboItem : llmComboItems) {
-////                llmModelcomboBox.addItem(llmComboItem);
-//                String[] values =  llmComboItem.split("~");
-//                String modelName = values[0];
-//                String modeType = values[1];
-//                String modelSize = values[2];
-//
-//                llmModelcomboBox.addItem(modelName);
-//                modelTypeText.setText(modeType);
-//                modelSizeText.setText(modelSize);
-//            }
-
-//            for (String comboItem : llmComboItems) {
-//                llmModelcomboBox.addItem(comboItem);
-//            }
-
         } catch (RuntimeException ex) {
             log.error("Exception while populating LLM models: ", ex);
             throw new RuntimeException("Unable to fetch LLM models: " + ex.getMessage());
         }
-
     }
 
     private void validateInputs() {
@@ -492,7 +469,7 @@ public class AiDetailsPanel extends JPanel {
             throw new IllegalArgumentException("OAuth End Point cannot be empty!");
         }
         if (aiApiEndPointUri == null || aiApiEndPointUri.isEmpty()) {
-            Messages.showErrorDialog("LLM Api End Point cannot be empty", Constants.PROD_TITLE);
+            Messages.showErrorDialog("LLM api end point cannot be empty", Constants.PROD_TITLE);
             throw new IllegalArgumentException("LLM Api End Point cannot be empty!");
         }
 
