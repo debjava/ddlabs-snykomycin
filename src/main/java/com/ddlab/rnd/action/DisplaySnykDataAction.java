@@ -90,11 +90,11 @@ public class DisplaySnykDataAction extends AnAction {
                 });
     }
 
-    private void runAllInForegroundMode(Project project, String editorFileTypeName) {
-//        JTable table = SnykDataActionAddon.getProgressiveSnykIssues11(project,editorFileTypeName); // Correct
-        JTable table = SnykActionServiceImpl.fetchProgressiveSnykIssuesInForeground(project, editorFileTypeName);
-        showData(project, table);
-    }
+//    private void runAllInForegroundMode(Project project, String editorFileTypeName) {
+////        JTable table = SnykDataActionAddon.getProgressiveSnykIssues11(project,editorFileTypeName); // Correct
+//        JTable table = SnykActionServiceImpl.fetchProgressiveSnykIssuesInForeground(project, editorFileTypeName);
+//        showData(project, table);
+//    }
 
     private void showData(Project project, JTable table) {
         if (table != null && table.getRowCount() >= 0) {

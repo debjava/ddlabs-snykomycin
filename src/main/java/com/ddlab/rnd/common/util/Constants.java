@@ -28,7 +28,7 @@ public class Constants {
     public static final String CONTENT_TYPE = "Content-Type";
     public static final String AUTHORIZATION = "Authorization";
     public static final String URL_ENCODED_TYPE = "application/x-www-form-urlencoded";
-    public static final String JSON_TYPE = "application/json";
+//    public static final String JSON_TYPE = "application/json";
     public static final String CLIENT_CREDENTIALS = "grant_type=client_credentials";
 
     public static final String USER = "user";

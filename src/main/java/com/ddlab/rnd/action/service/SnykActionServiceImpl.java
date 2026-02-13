@@ -128,7 +128,7 @@ public class SnykActionServiceImpl {
 
         SynkoMycinSettings setting = SynkoMycinSettings.getInstance();
         String llmModel = setting.getLlmModelComboSelection();
-        log.debug("Selected Actual LLM Model Name ?: " + llmModel);
+        log.debug("Selected Actual LLM Model Name ?: {}" , llmModel);
 //
         String aiInputModelMsg = SnykApi.getSnykProjectIssueInputAIPrompt(highestFixedVersionPrompt, llmModel);
         allProjectIssue = getModifiedAiSnykIssueObject(aiInputModelMsg);

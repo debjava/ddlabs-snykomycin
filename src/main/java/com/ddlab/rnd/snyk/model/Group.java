@@ -11,8 +11,6 @@ import lombok.Setter;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Group {
-
 	@JsonProperty("name")
 	private String name;
-	
 }

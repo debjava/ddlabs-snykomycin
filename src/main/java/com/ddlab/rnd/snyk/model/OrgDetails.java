@@ -12,7 +12,6 @@ import lombok.Setter;
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OrgDetails {
-
 	@JsonProperty("orgs")
 	private List<SnykOrg> orgs;
 }

@@ -21,6 +21,7 @@ import com.ddlab.rnd.ui.util.SnykUiUtil;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.Messages;
 
 import lombok.Getter;
@@ -123,7 +124,8 @@ public class SnykDetailsPanel extends JPanel {
     }
 
     private void createOrgNameComboBox() {
-        orgNameComboBox = new JComboBox<String>();
+//        orgNameComboBox = new JComboBox<String>();
+        orgNameComboBox = new ComboBox<String>();
         GridBagConstraints gbc_orgNameComboBox = new GridBagConstraints();
         gbc_orgNameComboBox.insets = new Insets(0, 0, 0, 5);
         gbc_orgNameComboBox.fill = GridBagConstraints.HORIZONTAL;
@@ -165,10 +167,8 @@ public class SnykDetailsPanel extends JPanel {
                     CommonUIUtil.showAppErrorMessage(ex.getMessage());
                 }
             }
-
         });
     }
-
 
     private void validateInputs() {
         String snykUri = snykUriTxt.getText();
@@ -198,7 +198,5 @@ public class SnykDetailsPanel extends JPanel {
             log.error("Error while getting Snyk org and group names", e);
             throw new RuntimeException("Unable to fetch Snyk org and group names: " + e.getMessage());
         }
-
     }
-
 }

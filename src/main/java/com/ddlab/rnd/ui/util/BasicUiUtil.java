@@ -63,16 +63,16 @@ public class BasicUiUtil {
     }
 
 
-    public static List<String> getOrgNames() {
-        List<String> comboItems = List.of("Org-A", "Org-B", "Org-C","Org-D","Org-E");
-        return comboItems;
-    }
+//    public static List<String> getOrgNames() {
+//        List<String> comboItems = List.of("Org-A", "Org-B", "Org-C","Org-D","Org-E");
+//        return comboItems;
+//    }
 
-    public static List<String> getActualOrgNames(String snykUri, String snykToken) {
-        snykToken = "token " + snykToken;
-        List<String> comboItems = List.of("Org-A", "Org-B", "Org-C","Org-D","Org-E");
-        return comboItems;
-    }
+//    public static List<String> getActualOrgNames(String snykUri, String snykToken) {
+//        snykToken = "token " + snykToken;
+//        List<String> comboItems = List.of("Org-A", "Org-B", "Org-C","Org-D","Org-E");
+//        return comboItems;
+//    }
 
     public static void saveAiPanelSetting(SynkoMycinSettings settings, SnykoMycinSettingComponent component) {
         // AI Part

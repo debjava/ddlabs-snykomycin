@@ -6,7 +6,6 @@ import lombok.Data;
 
 @Data
 public class Usage {
-
 	@JsonProperty("prompt_tokens")
 	private int promptTokens;
 	@JsonProperty("total_tokens")
