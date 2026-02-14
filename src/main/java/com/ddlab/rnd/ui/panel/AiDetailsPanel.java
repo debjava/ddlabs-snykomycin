@@ -307,7 +307,12 @@ public class AiDetailsPanel extends JPanel {
         String aiApiEndPointUri = llmApiEndPointTxt.getText();
         try {
             llmModelMap = BasicUiUtil.getlLLMModelDetails(clientId, clientSecret, oauthEndPointUri, aiApiEndPointUri);
-            llmModelMap.forEach((key, value) ->llmModelcomboBox.addItem(key));
+
+            llmModelMap.forEach((key, value) -> {
+                if (key != null && !key.trim().isEmpty()) {
+                    llmModelcomboBox.addItem(key);
+                }
+            });
         } catch (RuntimeException ex) {
             log.error("Exception while populating LLM models: ", ex);
             throw new RuntimeException("Unable to fetch LLM models: " + ex.getMessage());
