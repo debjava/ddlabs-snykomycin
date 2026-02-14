@@ -137,7 +137,6 @@ public class SnykActionServiceImpl {
         if (allProjectIssue == null || allProjectIssue.getIssues() == null) {
             return Collections.emptyMap();
         }
-
         Map<String, String> fixedDependencyMap = allProjectIssue.getIssues().stream()
                 .filter(issue -> issue.getFixInfo() != null
                         && issue.getFixInfo().getFixedIn() != null

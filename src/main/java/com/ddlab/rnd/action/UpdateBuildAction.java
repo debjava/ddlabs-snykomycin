@@ -107,7 +107,6 @@ public class UpdateBuildAction extends AnAction {
                         CommonUIUtil.showAppSuccessfulMessage(Constants.NO_FIXABLE_ISSUES_MSG);
                         return;
                     }
-
                     String srcBuildFilePath = psiFile.getVirtualFile().getPath();
                     String destnBuildFilePath = srcBuildFilePath;
                     log.debug("Build fileName: {}", fileName);
