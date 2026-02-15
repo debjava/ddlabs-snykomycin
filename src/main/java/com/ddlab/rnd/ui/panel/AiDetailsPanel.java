@@ -16,9 +16,6 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -279,143 +276,6 @@ public class AiDetailsPanel extends JPanel {
         modelSizeText.setEditable(false);
     }
 
-
-//    private void createLayout() {
-//        GridBagLayout gbl_aiDetailsPanel = new GridBagLayout();
-//        gbl_aiDetailsPanel.columnWidths = new int[]{0, 0, 0};
-//        gbl_aiDetailsPanel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
-//        gbl_aiDetailsPanel.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-//        gbl_aiDetailsPanel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-//        setLayout(gbl_aiDetailsPanel);
-//    }
-//
-//    private void createClientIdLabel() {
-//        JLabel clienIdLbl = new JLabel("*Client Id:");
-//        GridBagConstraints gbc_clienIdLbl = new GridBagConstraints();
-//        gbc_clienIdLbl.insets = new Insets(0, 0, 5, 5);
-//        gbc_clienIdLbl.anchor = GridBagConstraints.EAST;
-//        gbc_clienIdLbl.gridx = 0;
-//        gbc_clienIdLbl.gridy = 0;
-//        add(clienIdLbl, gbc_clienIdLbl);
-//    }
-//
-//    private void createClientIdText() {
-//        clientIdTxt = new JTextField();
-//        GridBagConstraints gbc_clientIdTxt = new GridBagConstraints();
-//        gbc_clientIdTxt.insets = new Insets(0, 0, 5, 5);
-//        gbc_clientIdTxt.fill = GridBagConstraints.HORIZONTAL;
-//        gbc_clientIdTxt.gridx = 1;
-//        gbc_clientIdTxt.gridy = 0;
-//        add(clientIdTxt, gbc_clientIdTxt);
-//        clientIdTxt.setColumns(10);
-//    }
-//
-//    private void createClientSecretLabel() {
-//        JLabel clientSecretLbl = new JLabel("*Client Secret:");
-//        GridBagConstraints gbc_clientSecretLbl = new GridBagConstraints();
-//        gbc_clientSecretLbl.anchor = GridBagConstraints.EAST;
-//        gbc_clientSecretLbl.insets = new Insets(0, 0, 5, 5);
-//        gbc_clientSecretLbl.gridx = 0;
-//        gbc_clientSecretLbl.gridy = 1;
-//        add(clientSecretLbl, gbc_clientSecretLbl);
-//    }
-//
-//    private void createClientSecretText() {
-//        clientSecretTxt = new JTextField();
-//        GridBagConstraints gbc_clientSecretTxt = new GridBagConstraints();
-//        gbc_clientSecretTxt.insets = new Insets(0, 0, 5, 5);
-//        gbc_clientSecretTxt.fill = GridBagConstraints.HORIZONTAL;
-//        gbc_clientSecretTxt.gridx = 1;
-//        gbc_clientSecretTxt.gridy = 1;
-//        add(clientSecretTxt, gbc_clientSecretTxt);
-//        clientSecretTxt.setColumns(10);
-//    }
-//
-//    private void createOAuthEndPointLabel() {
-//        JLabel oauthLbl = new JLabel("*OAuth End Point:");
-//        GridBagConstraints gbc_oauthLbl = new GridBagConstraints();
-//        gbc_oauthLbl.anchor = GridBagConstraints.EAST;
-//        gbc_oauthLbl.insets = new Insets(0, 0, 5, 5);
-//        gbc_oauthLbl.gridx = 0;
-//        gbc_oauthLbl.gridy = 2;
-//        add(oauthLbl, gbc_oauthLbl);
-//    }
-//
-//    private void createOAuthEndPointText() {
-//
-//        oauthEndPointTxt = new JTextField();
-//        GridBagConstraints gbc_oauthEndPointTxt = new GridBagConstraints();
-//        gbc_oauthEndPointTxt.insets = new Insets(0, 0, 5, 5);
-//        gbc_oauthEndPointTxt.fill = GridBagConstraints.HORIZONTAL;
-//        gbc_oauthEndPointTxt.gridx = 1;
-//        gbc_oauthEndPointTxt.gridy = 2;
-//        add(oauthEndPointTxt, gbc_oauthEndPointTxt);
-//        oauthEndPointTxt.setColumns(10);
-//    }
-//
-//    private void createLLMAPiEndPointLabel() {
-//        JLabel llmApiEndPointLbl = new JLabel("*LLM Api EndPoint:");
-//        GridBagConstraints gbc_llmApiEndPointLbl = new GridBagConstraints();
-//        gbc_llmApiEndPointLbl.anchor = GridBagConstraints.EAST;
-//        gbc_llmApiEndPointLbl.insets = new Insets(0, 0, 5, 5);
-//        gbc_llmApiEndPointLbl.gridx = 0;
-//        gbc_llmApiEndPointLbl.gridy = 3;
-//        add(llmApiEndPointLbl, gbc_llmApiEndPointLbl);
-//    }
-//
-//    private void createLLMApiEndPointText() {
-//        llmApiEndPointTxt = new JTextField();
-//        GridBagConstraints gbc_llmApiEndPointTxt = new GridBagConstraints();
-//        gbc_llmApiEndPointTxt.gridwidth = 2;
-//        gbc_llmApiEndPointTxt.insets = new Insets(0, 0, 5, 5);
-//        gbc_llmApiEndPointTxt.fill = GridBagConstraints.HORIZONTAL;
-//        gbc_llmApiEndPointTxt.gridx = 1;
-//        gbc_llmApiEndPointTxt.gridy = 3;
-//        add(llmApiEndPointTxt, gbc_llmApiEndPointTxt);
-//        llmApiEndPointTxt.setColumns(10);
-//    }
-//
-//
-//    private void createLLMModelLabel() {
-//        JLabel llmModelLbl = new JLabel("LLM Models:");
-//        GridBagConstraints gbc_llmModelLbl = new GridBagConstraints();
-//        gbc_llmModelLbl.anchor = GridBagConstraints.EAST;
-//        gbc_llmModelLbl.insets = new Insets(0, 0, 5, 5);
-//        gbc_llmModelLbl.gridx = 0;
-//        gbc_llmModelLbl.gridy = 4;
-//        add(llmModelLbl, gbc_llmModelLbl);
-//    }
-//
-//    private void createLLMComboBox() {
-//        llmModelcomboBox = new JComboBox<String>();
-//        GridBagConstraints gbc_llmModelcomboBox = new GridBagConstraints();
-//        gbc_llmModelcomboBox.insets = new Insets(0, 0, 5, 5);
-//        gbc_llmModelcomboBox.fill = GridBagConstraints.HORIZONTAL;
-//        gbc_llmModelcomboBox.gridx = 1;
-//        gbc_llmModelcomboBox.gridy = 4;
-//        add(llmModelcomboBox, gbc_llmModelcomboBox);
-//    }
-//
-//    private void createLLMGetButton() {
-//        JButton llmModelGetBtn = new JButton("Get Models");
-//        GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-//        gbc_btnNewButton.gridwidth = 2;
-//        gbc_btnNewButton.insets = new Insets(0, 0, 5, 0);
-//        gbc_btnNewButton.anchor = GridBagConstraints.EAST;
-//        gbc_btnNewButton.gridx = 3;
-//        gbc_btnNewButton.gridy = 4;
-//        add(llmModelGetBtn, gbc_btnNewButton);
-//
-//        llmModelGetBtn.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                validateAndPopulateLLMModels();
-//            }
-//        });
-//    }
-
-
-
     // ~~~~~~~~~~~~~~~~~ Service Logic Implementations ~~~~~~~~~~~~~~~~
 
     private void validateAndPopulateLLMModels() {
@@ -445,33 +305,18 @@ public class AiDetailsPanel extends JPanel {
         String clientSecret = clientSecretTxt.getText();
         String oauthEndPointUri = oauthEndPointTxt.getText();
         String aiApiEndPointUri = llmApiEndPointTxt.getText();
-        java.util.List<String> llmComboItems = new ArrayList<>();
         try {
-//            llmComboItems = BasicUiUtil.getActualLLMModels(clientId, clientSecret, oauthEndPointUri, aiApiEndPointUri);
             llmModelMap = BasicUiUtil.getlLLMModelDetails(clientId, clientSecret, oauthEndPointUri, aiApiEndPointUri);
-            llmModelMap.forEach((key, value) ->llmModelcomboBox.addItem(key));
 
-//            for(String llmComboItem : llmComboItems) {
-////                llmModelcomboBox.addItem(llmComboItem);
-//                String[] values =  llmComboItem.split("~");
-//                String modelName = values[0];
-//                String modeType = values[1];
-//                String modelSize = values[2];
-//
-//                llmModelcomboBox.addItem(modelName);
-//                modelTypeText.setText(modeType);
-//                modelSizeText.setText(modelSize);
-//            }
-
-//            for (String comboItem : llmComboItems) {
-//                llmModelcomboBox.addItem(comboItem);
-//            }
-
+            llmModelMap.forEach((key, value) -> {
+                if (key != null && !key.trim().isEmpty()) {
+                    llmModelcomboBox.addItem(key);
+                }
+            });
         } catch (RuntimeException ex) {
             log.error("Exception while populating LLM models: ", ex);
             throw new RuntimeException("Unable to fetch LLM models: " + ex.getMessage());
         }
-
     }
 
     private void validateInputs() {
@@ -492,10 +337,9 @@ public class AiDetailsPanel extends JPanel {
             throw new IllegalArgumentException("OAuth End Point cannot be empty!");
         }
         if (aiApiEndPointUri == null || aiApiEndPointUri.isEmpty()) {
-            Messages.showErrorDialog("LLM Api End Point cannot be empty", Constants.PROD_TITLE);
+            Messages.showErrorDialog("LLM api end point cannot be empty", Constants.PROD_TITLE);
             throw new IllegalArgumentException("LLM Api End Point cannot be empty!");
         }
 
     }
-
 }

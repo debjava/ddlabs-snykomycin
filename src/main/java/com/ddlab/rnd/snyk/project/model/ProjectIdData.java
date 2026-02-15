@@ -14,8 +14,6 @@ import lombok.ToString;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ProjectIdData {
-
     @JsonProperty("data")
 	private List<ProjectIdDatum> projectIdData;
-
 }

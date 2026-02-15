@@ -59,10 +59,4 @@ public class SnykoMycinPluginConfigurable implements Configurable {
         return component.getMainPanel();
     }
 
-//    @Override
-//    public void disposeUIResources() {
-//        panel = null;
-//        textField = null;
-//        comboBox = null;
-//    }
 }

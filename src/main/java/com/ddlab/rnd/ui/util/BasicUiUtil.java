@@ -21,11 +21,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BasicUiUtil {
 
-//    public static List<String> getLLMModels() {
-//        List<String> comboItems = List.of("Model A", "Model B", "Model C","Model D","Model E");
-//        return comboItems;
-//    }
-
     public static Map<String, String> getlLLMModelDetails(String clientId, String clientSecret, String tokenUrl, String aiApriEndPointUrl) throws InvalidTokenException {
         // First get the bearer token
         Map<String, String> llmModelsMap = Map.of();
@@ -40,7 +35,6 @@ public class BasicUiUtil {
         } catch (RuntimeException re) {
             log.error("Exception while getting LLM models: ", re);
             throw re;
-//            Messages.showErrorDialog(re.getMessage(), "SnykoMycin Error");
         }
         return llmModelsMap;
     }
@@ -59,43 +53,26 @@ public class BasicUiUtil {
             comboItems = aiAssistant.getAllLLMModels(bearerToken, aiApriEndPointUrl);
         } catch (RuntimeException re) {
             log.error("Exception while getting LLM models: ", re);
-            re.printStackTrace();
             throw re;
-//            Messages.showErrorDialog(re.getMessage(), "SnykoMycin Error");
         }
         return comboItems;
     }
-
-
-//    public static List<String> getLLMModels(String clientId, String clientSecret) {
-//        log.debug("Client Id: "+clientId);
-//        log.debug("Client Secret: "+clientSecret);
-//        List<String> comboItems = List.of();
-//
-//        if(clientId == null || clientId.isEmpty()) {
-//            System.out.println("Client Id is empty ..");
-//            log.debug("Client Id is empty or blank..");
-//            Messages.showErrorDialog("Client Id cannot empty or blank", "Error title");
-//        }
-//        comboItems = List.of("Model A", "Model B", "Model C","Model D","Model E");
-//        return comboItems;
-//    }
 
     public static boolean isNullOrEmptyOrBlank(String str) {
         return str == null || str.isBlank();
     }
 
 
-    public static List<String> getOrgNames() {
-        List<String> comboItems = List.of("Org-A", "Org-B", "Org-C","Org-D","Org-E");
-        return comboItems;
-    }
+//    public static List<String> getOrgNames() {
+//        List<String> comboItems = List.of("Org-A", "Org-B", "Org-C","Org-D","Org-E");
+//        return comboItems;
+//    }
 
-    public static List<String> getActualOrgNames(String snykUri, String snykToken) {
-        snykToken = "token " + snykToken;
-        List<String> comboItems = List.of("Org-A", "Org-B", "Org-C","Org-D","Org-E");
-        return comboItems;
-    }
+//    public static List<String> getActualOrgNames(String snykUri, String snykToken) {
+//        snykToken = "token " + snykToken;
+//        List<String> comboItems = List.of("Org-A", "Org-B", "Org-C","Org-D","Org-E");
+//        return comboItems;
+//    }
 
     public static void saveAiPanelSetting(SynkoMycinSettings settings, SnykoMycinSettingComponent component) {
         // AI Part
@@ -158,9 +135,6 @@ public class BasicUiUtil {
         return !snykPanel.getSnykUriTxt().getText().equals(settings.getSnykUriTxt())
                 || !snykPanel.getSnykTokentxt().getText().equals(settings.getSnykTokenTxt())
                 || !(selectedSnykOrg != null && selectedSnykOrg.equals(settings.getSnykOrgComboSelection()));
-//                .equals(settings.getSnykOrgComboSelection());
-//                || !snykPanel.getOrgNameComboBox().getSelectedItem().toString()
-
     }
 
     public static void resetAiPanel(SynkoMycinSettings settings, SnykoMycinSettingComponent component) {
@@ -180,10 +154,6 @@ public class BasicUiUtil {
 
         aiPanel.getModelTypeText().setText(settings.getLlmModelType());
         aiPanel.getModelSizeText().setText(settings.getLlmModelSize());
-
-//        aiPanel.getModelSizeTxt().setText(settings.getLlmModelSize());
-//        aiPanel.getModelTypeTxt().setText(settings.getLlmModelType());
-
     }
 
     public static void resetSnykPanel(SynkoMycinSettings settings, SnykoMycinSettingComponent component) {

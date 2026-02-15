@@ -55,15 +55,6 @@ public class CommonUIUtil {
     }
 
     public static void showWarningNotifiation(String msg) {
-//        Project[] projects = ProjectManager.getInstance().getOpenProjects();
-//        ApplicationManager.getApplication().invokeLater(() -> {
-//            NotificationGroupManager.getInstance()
-//                    .getNotificationGroup("Snykomycin Notification Group")
-//                    .createNotification(msg, NotificationType.WARNING)
-//                    .notify(projects[0]);
-//
-//        });
-
         for (Project project : ProjectManager.getInstance().getOpenProjects()) {
             Notification notification =
                     new Notification("Snykomycin Notification Group", Constants.PROD_TITLE, msg, NotificationType.INFORMATION);

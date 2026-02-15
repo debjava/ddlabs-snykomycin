@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import tools.jackson.databind.ObjectMapper;
 
 import javax.swing.*;
+import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
@@ -128,13 +129,18 @@ public class SnykActionServiceImpl {
 
         SynkoMycinSettings setting = SynkoMycinSettings.getInstance();
         String llmModel = setting.getLlmModelComboSelection();
-        log.debug("Selected Actual LLM Model Name ?: " + llmModel);
-//
+        log.debug("Selected Actual LLM Model Name ?: {}" , llmModel);
+
         String aiInputModelMsg = SnykApi.getSnykProjectIssueInputAIPrompt(highestFixedVersionPrompt, llmModel);
         allProjectIssue = getModifiedAiSnykIssueObject(aiInputModelMsg);
 
+        if (allProjectIssue == null || allProjectIssue.getIssues() == null) {
+            return Collections.emptyMap();
+        }
         Map<String, String> fixedDependencyMap = allProjectIssue.getIssues().stream()
-                .filter(issue -> issue.getFixInfo() != null && !issue.getFixInfo().getFixedIn().isEmpty())
+                .filter(issue -> issue.getFixInfo() != null
+                        && issue.getFixInfo().getFixedIn() != null
+                        && !issue.getFixInfo().getFixedIn().isEmpty())
                 .collect(Collectors.toMap(
                         SnykIssue::getPkgName,
                         issue -> issue.getFixInfo().getFixedIn().get(0),
